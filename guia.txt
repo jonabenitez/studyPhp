@@ -1,0 +1,45 @@
+
+            1 METODO POST 
+
+definicion: EL metodo post se utiliza para enviar informacion desde mi front al back, al bloque php.
+donde:
+en el back:
+esta un array va a recepcionar la info traida del front
+
+$nombre = $_POST['txtNombre'];
+
+en el front:
+esta el formulario que va a realizar este envio.
+
+<form action="ejercicios1.php" method="post"></form>
+      1)  EL ACTION INDICA A LA CARPETA QUE SE ENVIA
+      2)  EL METODO INDICA LA ACCION. POST, ENVIAR.
+<input type="text" name="txtNombre" id="inputQueSeEnviar">
+      3) EL INPUT CON EL NAME que sea igual a la def del array del back, es lo que se va a enviar y llenar ese array
+<input type="submit" value="Enviar">
+      4) el boton submit va a realizar la accion
+
+    CONDICIONAL IF($_POST)
+
+sin este nos salta un warning, ya que antes de que el usuario envie la info, el array esta vacio,
+este condicional sirva para evaluar que el usuario haya enviado algo, si se genero el posteo se ejecuta la linea.
+
+______________________________________________________________________________
+            2 METODO GET
+
+definicion: es el envio de datos por medio de la url, desde un elemento html a uno php
+
+SIMILITUD: HACEN LO MISMO, ALMACENAN LA INFO DEL FRONT Y LA
+DIFERENCIA ENTRE AMBOS METODOS:
+
+EL POST: OCULTA LOS DATOS Y LOS GUARDA EN UNA VARIABLE O ARRAY.
+
+EL METODO GET: LOS MUESTRA EN LA URL Y LOS RECEPCIONA.
+
+_____________________________________________________________________________
+            3 ENVIO DE VARIABLES + CONCATENACION + STRING
+
+la concatenacion se hace con el "."
+
+los que tienen "comillas dobles": indican que es un texto, un string en si.
+los que tienen 'comillas simples': indica que es un grupo de caracteeres.

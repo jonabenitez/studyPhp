@@ -1,22 +1,23 @@
 <?php
 
 
-// LAS CLASES: se basa todo en plantillas y una vez que tengamos estas plantillas, crear los objetos.
+// LAS CLASES: se basa todo en plantillas o MOLDES y una vez que tengamos estas plantillas, crear los objetos.
 // las clases se conforman de 2 partes:
 
 
-// la primera parte: donde se definen las propiedades, lo que voy a poder imprimir y manipular
-// public:
-// este se tiene acceso por fuera de la clase, lo podemos definir y cambiar, como el nombre y en definirNombre
-// private: no se tiene acceso por fuera, 
-// protected:
+// la primera parte: 
+//donde se definen las propiedades, lo que voy a poder imprimir y manipular
 
-// la propiedad privadas:
-// a diferencia de las public solo la podemos modificar  o utilizarlo solo por medio de los metodos.
+// la segunda parte:
+// donde creo la funcion O metodos para aplicar a las propiedades del metodo.
 
-//protected: es lo que se define como encapsulamiento, esto es definido y solo se puede definir en la clase o la heredades
 
-// la segunda parte: donde creo la funcion para aplicarle a estas propiedades.
+//VISIBILIDAD DE LAS PROPIEDADES
+//a. public: este se tiene acceso por fuera de la clase, lo podemos definir y cambiar, como el nombre y en definirNombre.
+
+//b. private: esta va a tener ciertas restricciones, donde, a diferencia de las public solo la podemos modificar  o utilizarlo solo por medio de los METODOS o funciones, no podemos verla con $objAlumnos->edad.
+
+//c. protected: es lo que se define como encapsulamiento, esto es definido y solo se puede definir o acceder en la clase o la heredades de esta misma.
 
 class Personas
 {
@@ -47,6 +48,8 @@ class Personas
         echo " te doy la pata" . $this->nombre;
     }
 
+
+    // ASI SE HACE VISIBLE LA EDAD, DEFINIENDOLA Y RETORNANDOLA DENTRO DEL METODO
     public function ImprimirEdad()
     {
         $this->edad = 20;
@@ -59,9 +62,6 @@ class Personas
 $objAlumno1 = new personas(); // CREACION DEL OBJETO
 $objAlumno1->asignarNombre("lulu"); //LAMADA AL METODO
 echo $objAlumno1->nombre; // IMPRIMIR LA PROP
-$objAlumno1->asignarApellido(' diaz');
-echo $objAlumno1->apellido;
-echo "<br/>";
 
 ///// CREACION DEL ALUMNO 2 /////
 $objAlumno2 = new personas(); //CREACION DEL OBJETO
@@ -169,8 +169,47 @@ echo $Perros1->getPeso(); //--> retorna el valor del set
 
 
 
+class familia
+{
 
-?>
+
+    //      PROPIEDADES       //
+    public $integrantes;
+    private $dni;
+
+    ///             METODOS   ////
+    public function nuevoIntegrante($nuevoIntegrante)
+    {
+        $this->integrantes = $nuevoIntegrante;
+    }
+    public function imprimirIntegrante()
+    {
+        echo "<br/>"."hola soy ".$this->integrantes;
+    }
+
+    public function imprimirDni ($nuevoDni) {
+        $this->dni = $nuevoDni;
+        return "<br/>"."dni: ".$this->dni;
+    }
+}
+// CREAMOS UN OBJETO
+$objIntegranteA = new familia(); //iniciamos la clase familia.
+$objIntegranteA->nuevoIntegrante("brian"); //el objeto accede al metodo y lo define
+echo $objIntegranteA->ImprimirIntegrante();
+
+
+
+//MOSTRAR PROP PRIVADA 
+//(X) NO PUEDO DIRECTAMENTE DESDE LAS PROPIEDADES
+echo $objIntegranteA->integrantes; //(V) puedo porque es public
+// echo $objIntegranteA->dni;  // (X) no puedo porque es privado
+
+
+//(V) DESDE LOS METODOS - puedo acceder o modificarlos desde aqui, sino hay un metodo para alterarlo, no se puede alterar.
+echo $objIntegranteA-> imprimirDni('39500263');
+
+
+    ?>
 
 <!DOCTYPE html>
 <html lang="en">

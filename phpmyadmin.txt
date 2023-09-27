@@ -1,0 +1,25 @@
+PHP MY ADMIN ES UN SOFTWARE QUE LEE BASE DE DATOS.
+
+base de datos: es un motor que nos permiten almacenar info y este phpmyadmin es el visor de esta misma para gestionarla.
+
+EL CLON DE MYSQL === MARIA DB
+MariaDB: es una base de datos relacional de código abierto que se utiliza ampliamente en aplicaciones web, sistemas empresariales y otros entornos donde se requiere almacenamiento y gestión de datos. Debido a su relación con MySQL y su continua mejora y desarrollo por parte de la comunidad, MariaDB es una opción popular para quienes buscan una alternativa de código abierto y compatible con MySQL en sus proyectos de bases de datos.
+
+//// MI BASE DE DATOS // album
+
+CUANDO NOSOTROS CREAMOS LA BASE DE DATOS, DEFINIMOS LA ESTRUCTURA, LA CUAL NOS VA A SERVIR PARA ALMACENAR INFO QUE EN MUCHOS CASOS LA INFO QUE ESTA EN UNA TABLA SE RELACIONA CON MUCHAS OTRAS TABLAS.
+
+
+
+se encuentra en: http://localhost/phpmyadmin.
+.
+.
+ ==> el objetivo => comunicarme con esta base de datos, para poder crear informacion.
+.
+.
+ ==> como conectarme a la base de datos (conexionBaseDatos.php)
+.
+.
+==> creacion de tablas en la base (insetarDatosBase.php)
+
+
